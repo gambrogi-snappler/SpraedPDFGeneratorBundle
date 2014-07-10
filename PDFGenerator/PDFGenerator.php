@@ -101,8 +101,8 @@ class PDFGenerator
         } catch(\InvalidArgumentException $e) {
             throw new \InvalidArgumentException(sprintf('Unable to load "%s"', $resource), 0, $e);
         }
-
-        $command = 'java -Djava.awt.headless=true -jar ';
+        $command = '/opt/jre1.8.0_05/bin/'
+        $command .= 'java -Djava.awt.headless=true -jar ';
         $command .= '"' . $path . '"';
         $command .= ' --html "' . $htmlFile . '" --pdf "' . $pdfFile . '"';
         $command .= ' --encoding ' . $encoding;
